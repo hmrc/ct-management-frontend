@@ -38,15 +38,15 @@ import uk.gov.hmrc.play.http.HeaderCarrierConverter
 import scala.concurrent.{ExecutionContext, Future}
 
 trait IdentifierAction
-  extends ActionBuilder[IdentifierRequest, AnyContent]
+    extends ActionBuilder[IdentifierRequest, AnyContent]
     with ActionFunction[Request, IdentifierRequest]
 
 class AuthenticatedIdentifierAction @Inject() (
-                                                override val authConnector: AuthConnector,
-                                                config: FrontendAppConfig,
-                                                val parser: BodyParsers.Default
-                                              )(implicit val executionContext: ExecutionContext)
-  extends IdentifierAction
+  override val authConnector: AuthConnector,
+  config: FrontendAppConfig,
+  val parser: BodyParsers.Default
+)(implicit val executionContext: ExecutionContext)
+    extends IdentifierAction
     with AuthorisedFunctions
     with Logging {
 
@@ -64,12 +64,12 @@ class AuthenticatedIdentifierAction @Inject() (
           Retrievals.credentialRole
       ) {
         case Some(internalId) ~ Enrolments(enrolments) ~ Some(Organisation) ~ Some(User)
-          if enrolments.exists(_.key == orgEnrolment) =>
+            if enrolments.exists(_.key == orgEnrolment) =>
           logger.info(s"Authorisation requested as Organisation")
           validateOrganisation(enrolments)(request, internalId, block)
 
         case Some(internalId) ~ Enrolments(enrolments) ~ Some(Agent) ~ Some(User)
-          if enrolments.exists(_.key == agentEnrolment) =>
+            if enrolments.exists(_.key == agentEnrolment) =>
           logger.info(s"Authorisation requested as Agent")
           validateAgent(enrolments)(request, internalId, block)
 
@@ -98,8 +98,8 @@ class AuthenticatedIdentifierAction @Inject() (
   }
 
   private def validateOrganisation[A](
-                                       enrolment: Set[Enrolment]
-                                     )(request: Request[A], internalId: String, block: IdentifierRequest[A] => Future[Result]) = {
+    enrolment: Set[Enrolment]
+  )(request: Request[A], internalId: String, block: IdentifierRequest[A] => Future[Result]) = {
     val validUTR: Option[String] = for {
       enrolmentValue <- enrolment.find(e => e.key.equals(orgEnrolment) && e.state.equalsIgnoreCase(activatedState))
       identifier     <- enrolmentValue.identifiers.find(_.key.equals(orgKey))
@@ -117,8 +117,8 @@ class AuthenticatedIdentifierAction @Inject() (
 
   // TODO Add Business function F2 - Agent Service Guard
   private def validateAgent[A](
-                                enrolment: Set[Enrolment]
-                              )(request: Request[A], internalId: String, block: IdentifierRequest[A] => Future[Result]) = {
+    enrolment: Set[Enrolment]
+  )(request: Request[A], internalId: String, block: IdentifierRequest[A] => Future[Result]) = {
     val validIRAgentReference: Option[String] = for {
       enrolmentValue <- enrolment.find(e => e.key.equals(agentEnrolment) && e.state.equalsIgnoreCase(activatedState))
       identifier     <- enrolmentValue.identifiers.find(_.key.equals(agentKey))
@@ -149,9 +149,9 @@ object AuthenticatedIdentifierAction {
 }
 
 class SessionIdentifierAction @Inject() (
-                                          val parser: BodyParsers.Default
-                                        )(implicit val executionContext: ExecutionContext)
-  extends IdentifierAction {
+  val parser: BodyParsers.Default
+)(implicit val executionContext: ExecutionContext)
+    extends IdentifierAction {
 
   override def invokeBlock[A](request: Request[A], block: IdentifierRequest[A] => Future[Result]): Future[Result] = {
 
