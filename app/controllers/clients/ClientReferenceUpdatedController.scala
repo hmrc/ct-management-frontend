@@ -25,12 +25,12 @@ import views.html.clients.ClientReferenceUpdatedView
 import javax.inject.Inject
 
 class ClientReferenceUpdatedController @Inject() (
-                                                   val controllerComponents: MessagesControllerComponents,
-                                                   identify: IdentifierAction,
-                                                   agentGuard: AgentOnlyAction,
-                                                   view: ClientReferenceUpdatedView
-                                                 ) extends FrontendBaseController
-  with I18nSupport {
+  val controllerComponents: MessagesControllerComponents,
+  identify: IdentifierAction,
+  agentGuard: AgentOnlyAction,
+  view: ClientReferenceUpdatedView
+) extends FrontendBaseController
+    with I18nSupport {
 
   def onPageLoad(clientRef: String): Action[AnyContent] = (identify andThen agentGuard) { implicit request =>
     Ok(view(clientRef.trim))

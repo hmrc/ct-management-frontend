@@ -26,15 +26,15 @@ import views.html.clients.ClientReferenceUpdatedView
 
 class ClientReferenceUpdatedViewSpec extends SpecBase {
 
-  val application: Application = applicationBuilder().build()
-  val view: ClientReferenceUpdatedView  = application.injector.instanceOf[ClientReferenceUpdatedView]
+  val application: Application         = applicationBuilder().build()
+  val view: ClientReferenceUpdatedView = application.injector.instanceOf[ClientReferenceUpdatedView]
 
   implicit val messagesApi: MessagesApi = application.injector.instanceOf[MessagesApi]
   implicit val messages: Messages       = MessagesImpl(Lang.defaultLang, messagesApi)
 
   implicit val request: FakeRequest[_] = FakeRequest()
 
-  private val clientRef      = "ACY-001"
+  private val clientRef     = "ACY-001"
   private val clientListUrl = "/clients/clientList" // TODO placeholder, update when the real route exists
 
   def render(id: String): Document =
