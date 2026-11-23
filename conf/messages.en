@@ -52,7 +52,7 @@ unauthorised.heading = You can’t access this service with this account
 breadcrumbs.home = Home
 breadcrumbs.clientList=Clientlist
 breadcrumbs.ViewClients=View clients
-breadcrumbs.clientsName=Clients Name
+breadcrumbs.clientsName=Clients name
 breadcrumbs.manageClient=Manage your client reference
 
 
@@ -62,11 +62,11 @@ clientDeleted.heading=Client deleted
 clientDeleted.panel.body=You have deleted the client {0}
 clientDeleted.whatHappensNext=What happens next
 clientDeleted.delay=It may take up to 4 days for the change to appear.
-clientDeleted.backToClients=Back to Clients
+clientDeleted.backToClients=Back to clients
 
 clientRefDeleted.title=Client reference deleted – View Corporation Tax – GOV.UK
 clientRefDeleted.heading=Client reference deleted
 clientRefDeleted.panel.body=You have deleted the client reference for {0}
 clientRefDeleted.whatHappensNext=What happens next
 clientRefDeleted.delay=It may take up to 1 day for the change to appear.
-clientRefDeleted.backToClients=Back to Clients
+clientRefDeleted.backToClients=Back to cgit statuslients
