@@ -30,7 +30,7 @@
   govukBreadcrumbs: GovukBreadcrumbs
 )
 
-@(clientRef: String)(implicit request: Request[_], messages: Messages)
+@(clientId: String)(implicit request: Request[_], messages: Messages)
 
 @layout(pageTitle = messages("clientRefUpdated.title"), showBackLink = false) {
 
@@ -38,7 +38,7 @@
 
   @govukPanel(Panel(
     title   = Text(messages("clientRefUpdated.heading")),
-    content = Text(messages("clientRefUpdated.panel.body", clientRef))
+    content = Text(messages("clientRefUpdated.panel.body", clientId))
   ))
   @h2(messages("clientRefUpdated.whatHappensNext"))
   @paragraph(messages("clientRefUpdated.delay"))

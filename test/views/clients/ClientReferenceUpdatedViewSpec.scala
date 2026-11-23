@@ -34,7 +34,7 @@ class ClientReferenceUpdatedViewSpec extends SpecBase {
 
   implicit val request: FakeRequest[_] = FakeRequest()
 
-  private val clientRef     = "ACY-001"
+  private val clientId      = "ACY-001"
   private val clientListUrl = "/clients/clientList" // TODO placeholder, update when the real route exists
 
   def render(id: String): Document =
@@ -43,37 +43,37 @@ class ClientReferenceUpdatedViewSpec extends SpecBase {
   "ClientDeletedView" - {
 
     "render the page title" in {
-      val doc = render(clientRef)
+      val doc = render(clientId)
 
       doc.title() must include(messages("clientRefUpdated.title"))
     }
 
     "render the confirmation heading" in {
-      val doc = render(clientRef)
+      val doc = render(clientId)
 
       doc.select("h1").text() must include(messages("clientRefUpdated.heading"))
     }
 
     "render the confirmation message with the client id" in {
-      val doc = render(clientRef)
+      val doc = render(clientId)
 
-      doc.body().text() must include(messages("clientRefUpdated.panel.body", clientRef))
+      doc.body().text() must include(messages("clientRefUpdated.panel.body", clientId))
     }
 
     "render the what happens next heading" in {
-      val doc = render(clientRef)
+      val doc = render(clientId)
 
       doc.select("h2").text() must include(messages("clientRefUpdated.whatHappensNext"))
     }
 
     "render the delay message" in {
-      val doc = render(clientRef)
+      val doc = render(clientId)
 
       doc.body().text() must include(messages("clientRefUpdated.delay"))
     }
 
     "render a link back to the client list" in {
-      val link = render(clientRef).select(s"a[href=$clientListUrl]")
+      val link = render(clientId).select(s"a[href=$clientListUrl]")
 
       link.size() mustBe 1
       link.text() mustBe messages("clientRefUpdated.backToClients")

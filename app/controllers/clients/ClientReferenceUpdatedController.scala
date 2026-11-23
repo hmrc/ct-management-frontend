@@ -32,7 +32,7 @@ class ClientReferenceUpdatedController @Inject() (
 ) extends FrontendBaseController
     with I18nSupport {
 
-  def onPageLoad(clientRef: String): Action[AnyContent] = (identify andThen agentGuard) { implicit request =>
-    Ok(view(clientRef.trim))
+  def onPageLoad(clientId: String): Action[AnyContent] = (identify andThen agentGuard) { implicit request =>
+    Ok(view(clientId.trim))
   }
 }
