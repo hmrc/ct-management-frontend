@@ -61,7 +61,7 @@ clientDeleted.whatHappensNext=What happens next
 clientDeleted.delay=It may take up to 4 days for the change to appear.
 clientDeleted.backToClients=Back to Clients
 
-clientRefUpdated.title=Client deleted – View Corporation Tax – GOV.UK
+clientRefUpdated.title=Client reference updated – View Corporation Tax – GOV.UK
 clientRefUpdated.heading=Client reference updated
 clientRefUpdated.panel.body=You have updated the client reference for {0}
 clientRefUpdated.whatHappensNext=What happens next
