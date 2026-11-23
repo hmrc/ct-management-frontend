@@ -66,4 +66,4 @@ clientRefUpdated.heading=Client reference updated
 clientRefUpdated.panel.body=You have updated the client reference for {0}
 clientRefUpdated.whatHappensNext=What happens next
 clientRefUpdated.delay=It may take up to 1 day for the change to appear.
-clientRefUpdated.backToClients=Back to Clients
+clientRefUpdated.backToClients=Back to clients
