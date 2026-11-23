@@ -51,7 +51,7 @@ unauthorised.heading = You can’t access this service with this account
 breadcrumbs.home = Home
 breadcrumbs.clientList=Clientlist
 breadcrumbs.ViewClients=View clients
-breadcrumbs.clientsName=Clients Name
+breadcrumbs.clientsName=Clients name
 breadcrumbs.manageClient=Manage your client reference
 
 clientDeleted.title=Client deleted – View Corporation Tax – GOV.UK
@@ -59,7 +59,7 @@ clientDeleted.heading=Client deleted
 clientDeleted.panel.body=You have deleted the client {0}
 clientDeleted.whatHappensNext=What happens next
 clientDeleted.delay=It may take up to 4 days for the change to appear.
-clientDeleted.backToClients=Back to Clients
+clientDeleted.backToClients=Back to clients
 
 clientRefUpdated.title=Client reference updated – View Corporation Tax – GOV.UK
 clientRefUpdated.heading=Client reference updated
