@@ -32,4 +32,14 @@ object PageBreadcrumbs {
       )
     )
 
+  def clientRefDeleted(implicit messages: Messages): Breadcrumbs =
+    // TODO: Add hrefs
+    Breadcrumbs(
+      items = Seq(
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.home")), href = Some("/")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.ViewClients")), href = Some("/clients/view-clients")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.clientsName")), href = Some("/clients/clientName")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.manageClient")), href = Some("/clients/manageClient"))
+      )
+    )
 }
