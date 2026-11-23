@@ -21,4 +21,4 @@ GET         /account/signed-out                          controllers.auth.Signed
 GET         /unauthorised                                controllers.UnauthorisedController.onPageLoad()
 #Manage agent clients
 GET         /view-clients/delete-client/client-deleted/:clientId   controllers.clients.ClientDeleteConfirmationController.onPageLoad(clientId: String)
-GET         /view-clients/client-name/manage-your-client-reference/confirm-client-reference/client-reference-deleted/:clientRef   controllers.clients.ClientReferenceDeleteConfirmationController.onPageLoad(clientRef: String)
+GET         /view-clients/client-name/manage-your-client-reference/confirm-client-reference/client-reference-deleted/:clientId   controllers.clients.ClientReferenceDeleteConfirmationController.onPageLoad(clientId: String)
