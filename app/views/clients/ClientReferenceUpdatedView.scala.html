@@ -32,9 +32,9 @@
 
 @(clientId: String)(implicit request: Request[_], messages: Messages)
 
-@layout(pageTitle = messages("clientRefUpdated.title"), showBackLink = false) {
+@layout(pageTitle = messages("clientRefUpdated.title"),
+  breadcrumbs = Some(PageBreadcrumbs.clientRefUpdated)){
 
-  @govukBreadcrumbs(PageBreadcrumbs.clientRefUpdated)
 
   @govukPanel(Panel(
     title   = Text(messages("clientRefUpdated.heading")),
@@ -42,8 +42,8 @@
   ))
   @h2(messages("clientRefUpdated.whatHappensNext"))
   @paragraph(messages("clientRefUpdated.delay"))
-  <p class="govuk-body">
-    // TODO: correct hrefs
+  <p class="govuk-body govuk-!-margin-bottom-8">
+    @*TODO: update correct hrefs*@
   @link(messages("clientRefUpdated.backToClients"), "/clients/clientList", true, false)
   </p>
 
