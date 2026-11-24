@@ -42,9 +42,15 @@
   ))
   @h2(messages("clientRefUpdated.whatHappensNext"))
   @paragraph(messages("clientRefUpdated.delay"))
-  <p class="govuk-body govuk-!-margin-bottom-8">
     @*TODO: update correct hrefs*@
-  @link(messages("clientRefUpdated.backToClients"), "/clients/clientList", true, false)
-  </p>
+    @link(
+      messages("clientRefUpdated.backToClients"),
+      "/clients/clientList",
+      true,
+      false,
+      "govuk-body govuk-!-display-block govuk-!-margin-bottom-8"
+    )
+
+
 
 }
