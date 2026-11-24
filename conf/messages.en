@@ -62,7 +62,7 @@ clientDeleted.heading=Client deleted
 clientDeleted.panel.body=You have deleted the client {0}.
 clientDeleted.whatHappensNext=What happens next
 clientDeleted.delay=It may take up to 4 days for the change to appear.
-clientDeleted.backToClients=Back to clients
+clientDeleted.backToClients=Back to Clients
 
 clientRefDeleted.title=Client reference deleted – View Corporation Tax – GOV.UK
 clientRefDeleted.heading=Client reference deleted
