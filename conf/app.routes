@@ -22,3 +22,4 @@ GET         /unauthorised                                controllers.Unauthorise
 #Manage agent clients
 GET         /view-clients/delete-client/client-deleted/:clientId   controllers.clients.ClientDeleteConfirmationController.onPageLoad(clientId: String)
 GET         /view-clients/client-name/manage-your-client-reference/confirm-client-reference/client-reference-deleted/:clientId   controllers.clients.ClientReferenceDeleteConfirmationController.onPageLoad(clientId: String)
+GET         /view-clients/client-name/manage-your-client-reference/confirm-client-reference/client-reference-updated/:clientId   controllers.clients.ClientReferenceUpdatedController.onPageLoad(clientId: String)
