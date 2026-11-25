@@ -26,10 +26,20 @@ object PageBreadcrumbs {
     // TODO: Add hrefs
     Breadcrumbs(
       items = Seq(
-        BreadcrumbsItem(content = Text(messages("Home")), href = Some("/")),
-        BreadcrumbsItem(content = Text(messages("Clientlist")), href = Some("/clients/client-list")),
-        BreadcrumbsItem(content = Text(messages("View clients")), href = Some("/clients/current-client"))
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.home")), href = Some("/")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.clientList")), href = Some("/clients/client-list")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.ViewClients")), href = Some("/clients/view-clients"))
       )
     )
 
+  def clientRefUpdated(implicit messages: Messages): Breadcrumbs =
+    // TODO: Add hrefs
+    Breadcrumbs(
+      items = Seq(
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.home")), href = Some("/")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.ViewClients")), href = Some("/clients/view-clients")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.clientsName")), href = Some("/clients/clientName")),
+        BreadcrumbsItem(content = Text(messages("breadcrumbs.manageClient")), href = Some("/clients/manageClient"))
+      )
+    )
 }
